@@ -1,0 +1,15 @@
+name: wedding-card
+on: push
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Wedding Card, Action Start!'
+  pwd-ls:
+    name: pwd & ls
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Working Directory
+        run: pwd
+      - name: List Files
+        run: ls -al
