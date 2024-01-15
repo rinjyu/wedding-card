@@ -96,7 +96,7 @@
 @font-face {
     font-family: 'Amsterdam';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Amsterdam.woff') format('woff');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 }
 
@@ -126,7 +126,7 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-bottom: 0.5rem;
   #font-family: "Nanum Gothic", sans-serif;
   font-family: "Amsterdam", sans-serif;
-  font-weight: 700;
+  font-weight: bold;
   line-height: 1.2;
 }
 
@@ -10957,6 +10957,7 @@ html {
   #font-family: "Nanum Gothic", sans-serif;
   font-family: "Amsterdam", sans-serif;
   #font-weight: 700;
+  font-weight: bold;
 }
 #mainNav .navbar-brand {
   color: #fff;
