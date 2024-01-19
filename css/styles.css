@@ -11243,6 +11243,7 @@ html {
 
 .ddayText {
   margin-top: 15px;
+  font-size: 20px;
 }
 
 details {
@@ -11259,14 +11260,19 @@ details {
 
 	&.contact {
       background: #FFF6EE;
-	  border-top: 15px solid gray;
-	  border-top-color: #FFC48B;
+	  #border-top: 15px solid gray;
+	  #border-top-color: #FFC48B;
 	  border-left: none;
 	  width: 300px;
 	  margin: 0 auto;
       p {
         list-style-type: corona-warning;
       }
+    }
+
+    &.contact_name {
+      display: flex;
+      justify-content: center;
     }
     
     &.bridegroom {
