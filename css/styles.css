@@ -11104,12 +11104,14 @@ html {
 
 .traffic-group {
 	font-size: 1.2rem;
+	text-align: center;
 	#margin-left: 1rem;
 	#margin-right: 1rem;
 }
 
 .traffic-main {
 	font-size: 1rem;
+	text-align: center;
 	#margin-left: 1rem;
 	#margin-right: 1rem;
 }
@@ -11117,6 +11119,7 @@ html {
 .traffic-sub {
 	#margin-left: 1rem;
 	#margin-right: 1rem;
+	text-align: center;
 }
 
 .place-address {
@@ -11353,4 +11356,12 @@ details {
 
 .account {
   font-size: 1.1rem;
+}
+
+.left {
+  float: left; width: 50%;
+}
+
+.right {
+  float: right; width: 50%;
 }
