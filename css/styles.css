@@ -11084,6 +11084,7 @@ html {
 
 .traffic-group-dl {
 	margin-bottom: 1rem;
+	padding-left: 8px;
 }
 
 .traffic-sub-dl {
@@ -11100,10 +11101,12 @@ html {
 .traffic-main {
 	font-size: 1rem;
 	#text-align: center;
+	padding-left: 8px;
 }
 
 .traffic-sub {
 	#text-align: center;
+	padding-left: 8px;
 }
 
 .place-address {
@@ -11220,7 +11223,7 @@ details {
     border-radius: 5px;
     overflow: hidden;
     background: rgba(0, 0, 0, .05);
-    border-left: 15px solid gray;
+    #border-left: 15px solid gray;
     padding:15px;
     & {
       margin-top: 15px;
@@ -11230,7 +11233,7 @@ details {
       background: #FFF6EE;
 	  #border-top: 15px solid gray;
 	  #border-top-color: #FFC48B;
-	  border-left: none;
+	  #border-left: none;
 	  width: 300px;
 	  margin: 0 auto;
       p {
@@ -11245,7 +11248,7 @@ details {
     
     &.bridegroom {
       background: #EFF8FB;
-      border-left-color: #A9E2F3;
+      #border-left-color: #A9E2F3;
       p {
         list-style-type: corona-warning;
       }
@@ -11253,7 +11256,7 @@ details {
     
     &.bride {
       background: #FFF0F3;
-      border-left-color: #FFB3C0;
+      #border-left-color: #FFB3C0;
       p {
         list-style-type: corona-alert;
       }
