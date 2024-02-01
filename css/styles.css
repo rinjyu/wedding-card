@@ -11110,7 +11110,13 @@ html {
 }
 
 .place-address {
-	font-size: 1rem;
+	font-size: 1.2rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.account-notice {
+	font-size: 1.1rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
@@ -11207,6 +11213,7 @@ html {
   &.current {
     background-color: #FF07b6;
     color: #fff !important;
+    border-radius: 50%;
     font-weight: 700;
     cursor: pointer;
   }
@@ -11244,22 +11251,6 @@ details {
     &.contact_name {
       display: flex;
       justify-content: center;
-    }
-    
-    &.bridegroom {
-      background: #EFF8FB;
-      #border-left-color: #A9E2F3;
-      p {
-        list-style-type: corona-warning;
-      }
-    }
-    
-    &.bride {
-      background: #FFF0F3;
-      #border-left-color: #FFB3C0;
-      p {
-        list-style-type: corona-alert;
-      }
     }
     
     summary,p {
@@ -11375,4 +11366,8 @@ details {
   top: 50%;
   right: 0%;
   transform: translate(0%,-50%);
+}
+
+.name {
+  font-weight: bold;
 }
