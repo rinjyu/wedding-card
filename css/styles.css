@@ -11371,3 +11371,27 @@ details {
 .name {
   font-weight: bold;
 }
+
+.animatable {
+  visibility: hidden;
+  animation-play-state: paused;
+}
+
+.animated {
+  animation-name: fadeInUp;
+  visibility: visible;
+  animation-fill-mode: both;
+  animation-duration: 2s;
+  animation-play_state:running;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
