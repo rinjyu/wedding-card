@@ -8,9 +8,11 @@
         <title>상원 ♥ 인주 결혼합니다</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="css/styles.css" rel="stylesheet" />
+		<link href="./css/splide-default.min.css" rel="stylesheet" type="text/css" />
+		<link href="./css/splide.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body id="page-top">
         <header class="masthead text-white text-center">
@@ -87,64 +89,53 @@
 				<div class="text-center ddayText"></div>
             </div>
         </section>
-        <section class="page-section gallery animatable" id="gallery">
-            <div class="container">
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">갤러리</h2>
-                <div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                </div>
-				<div class="gallery_grid">
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid1.jpg" alt="cabin" />
-					</div>
-					<div class="gallery-item mx-auto">
-						<img class="img-fluid" src="assets/img/wedding/wedding-grid2.jpg" alt="cake" />
+		<section class="page-section gallery animatable" id="gallery">
+			<div class="container">
+				<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">갤러리</h2>
+				<div class="divider-custom">
+					<div class="divider-custom-line"></div>
+				</div>
+				<div id="gallery_slider" class="splide">
+					<div class="splide__track">
+						<ul class="splide__list">
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding//wedding-grid2.jpg" alt="wedding-grid2" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding//wedding-grid2.jpg" alt="wedding-grid2" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding//wedding-grid2.jpg" alt="wedding-grid2" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding/wedding-grid1.jpg" alt="wedding-grid1" />
+							</li>
+							<li class="splide__slide">
+								<img src="assets/img/wedding//wedding-grid2.jpg" alt="wedding-grid2" />
+							</li>
+						</ul>
 					</div>
 				</div>
-            </div>
-        </section>
+			</div>
+		</section>
         <section class="page-section location animatable" id="location">
             <div class="container">
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">오시는 길</h2>
@@ -388,6 +379,7 @@
 		<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2fd6ac6ad06cf611c034cce8e1a5d207&libraries=services"></script>
 		<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
 		<script src="js/kakao-map.js"></script>
+		<script type="text/javascript" src="./js/splide.min.js"></script>
 		<script>
 
 			let slideIndex = 0;
@@ -409,12 +401,17 @@
 					alert("상원 ♥ 인주 예식일입니다.");
 				});
 
-				$(".gallery-item").on("click", function() {
-					slideIndex = $(this).index();
-					slideSetting(slideIndex);
-					showImage(slideIndex);
-					$("#galleryModal").modal("show");
-				});
+				let splide = new Splide("#gallery_slider", {
+					perPage: 1,
+					rewind: true
+				}).mount();
+
+<!--				$(".gallery-item").on("click", function() {-->
+<!--					slideIndex = $(this).index();-->
+<!--					slideSetting(slideIndex);-->
+<!--					showImage(slideIndex);-->
+<!--					$("#galleryModal").modal("show");-->
+<!--				});-->
 
 				$(window).scroll(function() {
 				  scrollEvent();
