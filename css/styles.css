@@ -11395,3 +11395,8 @@ details {
     transform: translateY(0);
   }
 }
+
+.splide__slide img {
+  width: 100%;
+  height: auto;
+}
