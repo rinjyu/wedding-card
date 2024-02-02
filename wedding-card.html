@@ -23,7 +23,7 @@
 				<p class="masthead-subheading font-weight-light mb-0">디노체컨벤션웨딩홀 6F 아트홀</p>
             </div>
         </header>
-		<section class="page-section information" id="about">
+		<section class="page-section information animatable" id="about">
             <div class="container">
                 <div class="row">
 					<div class="col">
@@ -33,7 +33,7 @@
 				</div>
             </div>
         </section>
-		<section class="page-section information" id="calendar">
+		<section class="page-section information animatable" id="calendar">
             <div style="container">
 				<div class="calendar">
 					<div class="calendar_title">
@@ -87,7 +87,7 @@
 				<div class="text-center ddayText"></div>
             </div>
         </section>
-        <section class="page-section gallery" id="gallery">
+        <section class="page-section gallery animatable" id="gallery">
             <div class="container">
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">갤러리</h2>
                 <div class="divider-custom">
@@ -145,7 +145,7 @@
 				</div>
             </div>
         </section>
-        <section class="page-section location" id="location">
+        <section class="page-section location animatable" id="location">
             <div class="container">
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">오시는 길</h2>
                 <div class="divider-custom">
@@ -254,7 +254,7 @@
 				</details>
             </div>
         </section>
-        <section class="page-section" id="account">
+        <section class="page-section animatable" id="account">
             <div class="container">
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">마음전하실 곳</h2>
                 <div class="divider-custom">
@@ -293,7 +293,7 @@
 				</div>
             </div>
         </section>
-		<section class="page-section information" id="contact">
+		<section class="page-section information animatable" id="contact">
 			<div class="container">
 				<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">혼주에게 연락하기</h2>
 				<div class="divider-custom">
@@ -415,7 +415,22 @@
 					showImage(slideIndex);
 					$("#galleryModal").modal("show");
 				});
+
+				$(window).scroll(function() {
+				  scrollEvent();
+				});
 			});
+
+			let scrollEvent = function() {
+				let scroll = window.innerHeight + window.scrollY;
+				let sections = $("section");
+				$.each(sections, function(index, item) {
+					if (item.offsetTop < scroll) {
+						$(this).removeClass("animatable");
+						$(this).addClass("animated");
+					}
+				});
+			}
 
 			let copyText = function(copyType, text) {
 				$("#page-top").append("<textarea></textarea>");
