@@ -10930,8 +10930,8 @@ html {
 .btn-delivery-link {
   border-radius: 100%;
   display: inline-flex;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.0rem;
+  height: 2.0rem;
   font-size: 1.25rem;
   justify-content: center;
   align-items: center;
@@ -11213,7 +11213,6 @@ html {
   &.current {
     background-color: #FF07b6;
     color: #fff !important;
-    border-radius: 50%;
     font-weight: 700;
     cursor: pointer;
   }
