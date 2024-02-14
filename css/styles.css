@@ -11032,7 +11032,7 @@ html {
 
 @media (min-width: 992px) {
   .masthead {
-    padding-top: calc(6rem + 104px);
+    #padding-top: calc(6rem + 104px);
 	padding-bottom: 2rem;
   }
   .masthead .masthead-heading {
