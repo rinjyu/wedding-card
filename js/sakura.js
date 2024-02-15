@@ -1,129 +1,171 @@
-(function ($) {
-    // requestAnimationFrame Polyfill
-    (function () {
-        var lastTime = 0;
-        var vendors = ['ms', 'moz', 'webkit', 'o'];
+/*!
+ * Sakura.js 1.0.0
+ * Vanilla JS version of jQuery-Sakura: Make it rain - sakura petals.
+ *
+ * Copyright 2019-2019 Jeroen Hammann
+ *
+ * Released under the MIT License
+ *
+ * Released on: January 9, 2019
+ */
+"use strict";
 
-        for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
-            window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
-            window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
-        }
+var Sakura = function Sakura(selector, options) {
+  var _this = this;
 
-        if (!window.requestAnimationFrame)
-            window.requestAnimationFrame = function (callback, element) {
-                var currTime = new Date().getTime();
-                var timeToCall = Math.max(0, 16 - (currTime - lastTime));
-                var id = window.setTimeout(function () {
-                        callback(currTime + timeToCall);
-                    },
-                    timeToCall);
-                lastTime = currTime + timeToCall;
+  if (typeof selector === 'undefined') {
+    throw new Error('No selector present. Define an element.');
+  }
 
-                return id;
-            };
+  this.el = document.querySelector(selector); // Defaults for the option object, which gets extended below.
 
-        if (!window.cancelAnimationFrame)
-            window.cancelAnimationFrame = function (id) {
-                clearTimeout(id);
-            };
-    }());
+  var defaults = {
+    className: 'sakura',
+    // Classname of the petal. This corresponds with the css.
+    fallSpeed: 1,
+    // Speed factor in which the petal falls.
+    maxSize: 14,
+    // The maximum size of the petal.
+    minSize: 10,
+    // The minimum size of the petal.
+    delay: 300,
+    // Delay between petals.
+    gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+    // Gradient color start (rgba).
+    gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+    // Gradient color end (rgba).
+    gradientColorDegree: 120 // Gradient degree angle.
 
-    // Sakura function.
-    $.fn.sakura = function (options) {
-        // We rely on these random values a lot, so define a helper function for it.
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
+  }; // Merge defaults with user options.
 
-        // Helper function to attach cross-browser events to an element.
-        var prefixes = ['moz', 'ms', 'o', 'webkit', ''];
-        var prefCount = prefixes.length;
+  var extend = function extend(originalObj, newObj) {
+    Object.keys(originalObj).forEach(function (key) {
+      if (newObj && Object.prototype.hasOwnProperty.call(newObj, key)) {
+        var origin = originalObj;
+        origin[key] = newObj[key];
+      }
+    });
+    return originalObj;
+  };
 
-        function prefixedEvent(element, type, callback) {
-            for (var i = 0; i < prefCount; i++) {
-                if (!prefixes[i]) {
-                    type = type.toLowerCase();
-                }
+  this.settings = extend(defaults, options); // Hide horizontal scrollbars on the target element.
 
-                element.get(0).addEventListener(prefixes[i] + type, callback, false);
-            }
-        }
+  this.el.style.overflowX = 'hidden'; // Random array element
 
-        // Defaults for the option object, which gets extended below.
-        var defaults = {
-            blowAnimations: ['blow-soft-left', 'blow-medium-left', 'blow-hard-left', 'blow-soft-right', 'blow-medium-right', 'blow-hard-right'],
-            className: 'sakura',
-            fallSpeed: 0.5,
-            maxSize: 14,
-            minSize: 9,
-            newOn: 300,
-            swayAnimations: ['sway-0', 'sway-1', 'sway-2', 'sway-3', 'sway-4', 'sway-5', 'sway-6', 'sway-7', 'sway-8']
-        };
-
-        var options = $.extend({}, defaults, options);
-
-        // Declarations.
-        var documentHeight = $(document).height();
-        var documentWidth = $(document).width();
-        var sakura = $('<div class="' + options.className + '" />');
-
-        // Set the overflow-x CSS property on the body to prevent horizontal scrollbars.
-        $('body').css({ 'overflow-x': 'hidden' });
-
-        // Function that inserts new petals into the document.
-        var petalCreator = function () {
-            setTimeout(function () {
-                requestAnimationFrame(petalCreator);
-            }, options.newOn);
-
-            // Get one random animation of each type and randomize fall time of the petals.
-            var blowAnimation = options.blowAnimations[Math.floor(Math.random() * options.blowAnimations.length)];
-            var swayAnimation = options.swayAnimations[Math.floor(Math.random() * options.swayAnimations.length)];
-            var fallTime = (Math.round(documentHeight * 0.007) + Math.random() * 5) * options.fallSpeed;
-
-            var animations = 'fall ' + fallTime + 's linear 0s 1' + ', ' +
-                blowAnimation + ' ' + (((fallTime > 30 ? fallTime : 30) - 20) + getRandomInt(0, 20)) + 's linear 0s infinite' + ', ' +
-                swayAnimation + ' ' + getRandomInt(2, 4) + 's linear 0s infinite';
-            var petal = sakura.clone();
-            var size = getRandomInt(options.minSize, options.maxSize);
-            var startPosLeft = Math.random() * documentWidth - 100;
-            var startPosTop = -((Math.random() * 20) + 15);
-
-            // Apply Event Listener to remove petals that reach the bottom of the page.
-            prefixedEvent(petal, 'AnimationEnd', function () {
-                $(this).remove();
-            });
-
-            // Apply Event Listener to remove petals that finish their horizontal float animation.
-            prefixedEvent(petal, 'AnimationIteration', function (ev) {
-                if ($.inArray(ev.animationName, options.blowAnimations) != -1) {
-                    $(this).remove();
-                }
-            });
-
-            petal
-                .css({
-                    '-webkit-animation': animations,
-                    '-o-animation': animations,
-                    '-ms-animation': animations,
-                    '-moz-animation': animations,
-                    animation: animations,
-                    height: size,
-                    left: startPosLeft,
-                    'margin-top': startPosTop,
-                    width: size
-                })
-                .appendTo('body');
-        };
+  function randomArrayElem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  } // Random integer
 
 
-        // Recalculate documentHeight and documentWidth on browser resize.
-        $(window).resize(function () {
-            documentHeight = $(document).height();
-            documentWidth = $(document).width();
-        });
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  } // Check for animation events.
 
-        // Finally: Start adding petals.
-        requestAnimationFrame(petalCreator);
-    };
-}(jQuery));
+
+  var prefixes = ['webkit', 'moz', 'MS', 'o', ''];
+
+  function PrefixedEvent(element, type, callback) {
+    for (var p = 0; p < prefixes.length; p += 1) {
+      var animType = type;
+
+      if (!prefixes[p]) {
+        animType = type.toLowerCase();
+      }
+
+      element.addEventListener(prefixes[p] + animType, callback, false);
+    }
+  } // Check if the element is in the viewport.
+
+
+  function elementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return rect.top >= 0 && rect.left >= 0 && rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) && rect.right <= (window.innerWidth || document.documentElement.clientWidth);
+  }
+
+  this.createPetal = function () {
+    if (_this.el.dataset.sakuraAnimId) {
+      setTimeout(function () {
+        window.requestAnimationFrame(_this.createPetal);
+      }, _this.settings.delay);
+    } // Name the animations. These have to match the animations in the CSS file.
+
+
+    var animationNames = {
+      blowAnimations: ['blow-soft-left', 'blow-medium-left', 'blow-soft-right', 'blow-medium-right'],
+      swayAnimations: ['sway-0', 'sway-1', 'sway-2', 'sway-3', 'sway-4', 'sway-5', 'sway-6', 'sway-7', 'sway-8']
+    }; // Get one random animation of each type and randomize fall time of the petals
+
+    var blowAnimation = randomArrayElem(animationNames.blowAnimations);
+    var swayAnimation = randomArrayElem(animationNames.swayAnimations);
+
+    var fallTime = (document.documentElement.clientHeight * 0.007 + Math.round(Math.random() * 5)) * _this.settings.fallSpeed; // Create animations
+
+
+    var animationsArr = ["fall ".concat(fallTime, "s linear 0s 1"), "".concat(blowAnimation, " ").concat((fallTime > 30 ? fallTime : 30) - 20 + randomInt(0, 20), "s linear 0s infinite"), "".concat(swayAnimation, " ").concat(randomInt(2, 4), "s linear 0s infinite")];
+    var animations = animationsArr.join(', '); // Create petal and give it a random size.
+
+    var petal = document.createElement('div');
+    petal.classList.add(_this.settings.className);
+    var height = randomInt(_this.settings.minSize, _this.settings.maxSize);
+    var width = height - Math.floor(randomInt(0, _this.settings.minSize) / 3);
+    petal.style.background = "linear-gradient(".concat(_this.settings.gradientColorDegree, "deg, ").concat(_this.settings.gradientColorStart, ", ").concat(_this.settings.gradientColorEnd, ")");
+    petal.style.webkitAnimation = animations;
+    petal.style.animation = animations;
+    petal.style.borderRadius = "".concat(randomInt(_this.settings.maxSize, _this.settings.maxSize + Math.floor(Math.random() * 10)), "px ").concat(randomInt(1, Math.floor(width / 4)), "px");
+    petal.style.height = "".concat(height, "px");
+    petal.style.left = "".concat(Math.random() * document.documentElement.clientWidth - 100, "px");
+    petal.style.marginTop = "".concat(-(Math.floor(Math.random() * 20) + 15), "px");
+    petal.style.width = "".concat(width, "px"); // Remove petals of which the animation ended.
+
+    PrefixedEvent(petal, 'AnimationEnd', function () {
+      if (!elementInViewport(petal)) {
+        petal.remove();
+      }
+    }); // Remove petals that float out of the viewport.
+
+    PrefixedEvent(petal, 'AnimationIteration', function () {
+      if (!elementInViewport(petal)) {
+        petal.remove();
+      }
+    }); // Add the petal to the target element.
+
+    _this.el.appendChild(petal);
+  };
+
+  this.el.setAttribute('data-sakura-anim-id', window.requestAnimationFrame(this.createPetal));
+};
+
+Sakura.prototype.start = function () {
+  var animId = this.el.dataset.sakuraAnimId;
+
+  if (!animId) {
+    this.el.setAttribute('data-sakura-anim-id', window.requestAnimationFrame(this.createPetal));
+  } else {
+    throw new Error('Sakura is already running.');
+  }
+};
+
+Sakura.prototype.stop = function () {
+  var _this2 = this;
+
+  var graceful = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+  var animId = this.el.dataset.sakuraAnimId;
+
+  if (animId) {
+    window.cancelAnimationFrame(animId);
+    this.el.setAttribute('data-sakura-anim-id', '');
+  } // Remove all current blossoms at once.
+  // You can also set 'graceful' to true to stop new petals from being created.
+  // This way the petals won't be removed abruptly.
+
+
+  if (!graceful) {
+    setTimeout(function () {
+      var petals = document.getElementsByClassName(_this2.settings.className);
+
+      while (petals.length > 0) {
+        petals[0].parentNode.removeChild(petals[0]);
+      }
+    }, this.settings.delay + 50);
+  }
+};

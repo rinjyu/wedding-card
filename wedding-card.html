@@ -42,7 +42,7 @@
 			<a onclick="playAudio();">
 				<audio id="audio" src="audio/one-more-spring-187902.mp3" type="audio/mp3" loop="loop" autoplay="false"></audio>
 			</a>
-			<img class="img-fluid mb-3" src="assets/img/wedding/wedding-main.jpg" alt="메인이미지" style="width: 100%; height: auto; object-fit: cover;" />
+			<img class="img-fluid mb-3 main-img" src="assets/img/wedding/wedding-main.jpg" alt="메인이미지" />
 			<h1 class="masthead-heading text-uppercase mb-0">최상원 ♥ 최인주</h1>
 			<p class="lead text-center mb-3">2024. 8. 24 토 PM 12:00</p>
 			<p class="lead text-center mb-3">디노체컨벤션웨딩홀 6F 아트홀</p>
@@ -391,9 +391,9 @@
 			let slideIndex = 0;
 			let isAudioOn = true;
 
-			$(document).ready(function(){
+			const sakura = new Sakura("body");
 
-				//$(".main-img").sakura();
+			$(document).ready(function(){
 
 				$("audio").prop("volume", "0.3");
 				playAudio();
@@ -450,7 +450,7 @@
 				} else {
 					$("#audio").get(0).pause();
 				}
-			} 
+			}
 
 			let copyText = function(copyType, text) {
 				$("#page-top").append("<textarea></textarea>");
