@@ -2,12 +2,12 @@ name: wedding-card
 on: push
 jobs:
   echo:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - run: echo 'Wedding Card, Action Start!'
   pwd-ls:
     name: pwd & ls
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Print Working Directory
         run: pwd
