@@ -11422,12 +11422,12 @@ details {
   position: absolute;
 }
 
-#sound-on-icon {
+#sound-off-icon {
   top: 4px;
   right: 8px;
 }
 
-#sound-off-icon {
+#sound-on-icon {
   top: 4px;
   right: 34px;
 }
