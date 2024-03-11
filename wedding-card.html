@@ -20,7 +20,7 @@
         <header class="masthead text-center" style="position: relative;">
 			<div id="switch-container">
 				<label class="switch">
-					<input type="checkbox" id="toggleAudio" onclick="toggleAudioOnOff();">
+					<input type="checkbox" id="toggleAudio">
 					<span class="slider round"></span>
 					<span id="sound-off-icon">
 						<svg class="svg-icon" viewBox="0 0 20 20">
@@ -403,7 +403,7 @@
 			$(document).ready(function(){
 
 				$("audio").prop("volume", "0.3");
-				playAudio();
+				//playAudio();
 
 				$(".btn_kakao").on("click", function() {
 					shareKakaoMessage();
@@ -429,6 +429,12 @@
 				$(window).scroll(function() {
 				  scrollEvent();
 				});
+
+				$("#toggleAudio").on("click", function() {
+					toggleAudioOnOff();
+				});
+
+				$("#toggleAudio").trigger("click");
 			});
 
 			let scrollEvent = function() {
