@@ -54,8 +54,8 @@
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
   --bs-body-bg-rgb: 255, 255, 255;
-  --bs-font-sans-serif: "Saying_tobe_strong", sans-serif;
-  --bs-font-monospace: "Saying_tobe_strong", sans-serif;
+  --bs-font-sans-serif: "NanumBarunpen", sans-serif;
+  --bs-font-monospace: "NanumBarunpen", sans-serif;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
   --bs-body-font-size: 1rem;
@@ -92,11 +92,10 @@
 }
 
 @font-face {
-    font-family: 'Saying_tobe_strong';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_09@1.0/Saying_tobe_strong.woff') format('woff');
+    font-family: 'NanumBarunpen';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumBarunpen.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-    font-size: x-large;
 }
 
 body {
@@ -128,7 +127,7 @@ hr {
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
   margin-bottom: 0.5rem;
-  font-family: "Saying_tobe_strong", sans-serif;
+  font-family: "NanumBarunpen", sans-serif;
   font-weight: bolder;
   line-height: 1.2;
 }
@@ -10962,7 +10961,7 @@ html {
 #mainNav {
   #padding-top: 1rem;
   #padding-bottom: 1rem;
-  font-family: "Saying_tobe_strong", sans-serif;
+  font-family: "NanumBarunpen", sans-serif;
   #font-weight: 700;
   font-weight: bold;
 }
