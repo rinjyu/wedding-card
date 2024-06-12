@@ -114,6 +114,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  touch-action: pan-x pan-y;
 }
 
 hr {
@@ -11131,13 +11132,13 @@ html {
 }
 
 .place-address {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
 
 .account-notice {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	margin-left: 1rem;
 	margin-right: 1rem;
 }
@@ -11232,16 +11233,26 @@ html {
   }
   
   &.current {
-    background-color: #FF07b6;
-    color: #fff !important;
+    #background-color: #FF07b6;
+    background-image: url("../assets/img/heart.png");
+    background-size: cover;
+    background-position: center;
+
+    #color: #fff !important;
     font-weight: 700;
     cursor: pointer;
+
+    .day {
+        position: absolute;
+        text-align: center;
+        color: white;
+    }
   }
 }
 
 .ddayText {
   margin-top: 15px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 details {
@@ -11417,7 +11428,7 @@ details {
 }
 
 .splide__slide img {
-   width: 50%;
+   width: 100%;
    height: auto;
 }
 
@@ -11568,10 +11579,45 @@ SVG Icons - svgicons.sparkk.fr
 }
 
 .btn_navi {
-    border:none;
+    border: none;
     margin:5px;
     width: 50px;
     height: 50px;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.main-typing-content {
+    display: none;
+}
+
+.introduction-typing-content {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+#introduction-typing ul li.on {
+    display: inline-block;
+    animation-name: cursor;
+    animation-duration: 0.3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes cursor {
+    0% {
+        border-right: 1px solid #fff;
+    }
+    50% {
+        border-right: 1px solid #000;
+    }
+    100% {
+        border-right: 1px solid #fff;
+    }
+}
+
+.copy_account {
+    margin-left: 5px;
 }
