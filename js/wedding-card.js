@@ -159,9 +159,9 @@ let shareKakaoMessage = function() {
 
 let calculatorWeddingDay = function() {
     const today = new Date();
-    const weddingDay = new Date("2024-08-24");
+    const weddingDay = new Date("2024-08-24").setHours(0, 0, 0, 0);
     const remainDay = weddingDay - today;
-    const day = Math.floor(remainDay/ (1000*60*60*24));
+    const day = Math.ceil(remainDay / (1000 * 60 * 60 * 24));
 
     let ddayText = "<span class=\"name\">상원</span> <span>❤️</span> <span class=\"name\">인주</span>의 결혼식";
     if (day > 0) {
