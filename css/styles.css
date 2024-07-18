@@ -11225,13 +11225,13 @@ html {
   align-items: center;
   justify-content: center;
   height: 25px;
+  font-weight: 600;
   color: #262626;
 
   &:nth-child(7n) {
     color: #ff685d;
-    font-weight: 700;
   }
-  
+
   &.current {
     #background-color: #FF07b6;
     background-image: url("../assets/img/heart.png");
@@ -11239,7 +11239,6 @@ html {
     background-position: center;
 
     #color: #fff !important;
-    font-weight: 700;
     cursor: pointer;
 
     .day {
