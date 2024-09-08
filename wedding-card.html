@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<style media="screen"></style>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+	<meta name="HandheldFriendly" content="true">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="description" content="" />
+	<meta name="author" content="" />
+	<title>상원 ❤️ 인주 결혼합니다!</title>
+	<!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />-->
+	<script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="css/styles.css" rel="stylesheet" type="text/css"/>
+	<link href="css/splide-default.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/splide.min.css" rel="stylesheet" type="text/css"/>
+	<link href="css/sakura.css" rel="stylesheet" type="text/css"/>
+</head>
+<body id="page-top">
+	<div id="switch-container">
+		<audio id="audio" preload="auto" autoplay loop>
+			<source src="audio/lovex27s-serenade-valentines-day-188266.mp3">
+		</audio>
+		<label class="switch" style="position: fixed; right: 3px; z-index: 1;">
+			<input type="checkbox" id="toggleAudio" onclick="toggleAudioOnOff();">
+			<span class="slider round"></span>
+			<span id="sound-off-icon">
+				<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M3.401,13.367h0.959l1.56-1.56H4.181v-4.07h3.177c0.207,0,0.405-0.084,0.553-0.23l3.608-3.633V6.21l1.56-1.56V1.983c0-0.315-0.192-0.602-0.485-0.721c-0.29-0.122-0.624-0.055-0.85,0.171L7.032,6.178h-3.63c-0.433,0-0.78,0.349-0.78,0.78v5.629C2.621,13.018,2.968,13.367,3.401,13.367z"></path>
+					<path fill="none" d="M11.519,15.674l-2.416-2.418L8,14.358l3.745,3.753c0.149,0.149,0.349,0.228,0.553,0.228c0.1,0,0.201-0.019,0.297-0.059c0.291-0.12,0.483-0.405,0.483-0.72V9.28l-1.56,1.56V15.674z"></path>
+					<path fill="none" d="M19.259,0.785c-0.167-0.168-0.387-0.25-0.606-0.25s-0.438,0.082-0.606,0.25l-4.968,4.968l-1.56,1.56l-4.496,4.494l-1.56,1.56L0.83,18.001c-0.335,0.335-0.335,0.877,0,1.213c0.167,0.167,0.386,0.251,0.606,0.251c0.22,0,0.439-0.084,0.606-0.251l5.407-5.407l1.105-1.104l2.965-2.966l1.56-1.56l6.18-6.181C19.594,1.664,19.594,1.12,19.259,0.785z"></path>
+				</svg>
+			</span>
+			<span id="sound-on-icon">
+				<svg class="svg-icon" viewBox="0 0 20 20">
+					<path fill="none" d="M9.344,2.593c-0.253-0.104-0.547-0.045-0.743,0.15L4.486,6.887H1.313c-0.377,0-0.681,0.305-0.681,0.681v4.916c0,0.377,0.304,0.681,0.681,0.681h3.154l4.137,4.142c0.13,0.132,0.304,0.201,0.482,0.201c0.088,0,0.176-0.017,0.261-0.052c0.254-0.105,0.42-0.354,0.42-0.629L9.765,3.224C9.765,2.947,9.599,2.699,9.344,2.593z M5.233,12.003c-0.128-0.127-0.302-0.2-0.483-0.2H1.994V8.249h2.774c0.182,0,0.355-0.072,0.483-0.201l3.151-3.173l0.001,10.305L5.233,12.003z"></path>
+					<path fill="none" d="M16.434,10.007c0-2.553-1.518-4.853-3.869-5.858C12.223,4,11.821,4.16,11.672,4.506c-0.148,0.346,0.013,0.746,0.359,0.894c1.846,0.793,3.041,2.6,3.041,4.608c0,1.997-1.188,3.799-3.025,4.592c-0.346,0.149-0.505,0.551-0.356,0.895c0.112,0.258,0.362,0.411,0.625,0.411c0.091,0,0.181-0.017,0.269-0.056C14.922,14.843,16.434,12.548,16.434,10.007z"></path>
+					<path fill="none" d="M13.418,10.005c0-1.349-0.802-2.559-2.042-3.086c-0.346-0.144-0.745,0.015-0.894,0.362c-0.146,0.346,0.016,0.745,0.362,0.893c0.737,0.312,1.212,1.031,1.212,1.832c0,0.792-0.471,1.509-1.2,1.825c-0.345,0.149-0.504,0.551-0.352,0.895c0.112,0.257,0.362,0.41,0.625,0.41c0.091,0,0.181-0.017,0.27-0.057C12.625,12.545,13.418,11.339,13.418,10.005z"></path>
+					<path fill="none" d="M13.724,1.453c-0.345-0.15-0.746,0.012-0.895,0.358c-0.148,0.346,0.013,0.745,0.358,0.894c2.928,1.256,4.819,4.122,4.819,7.303c0,3.171-1.886,6.031-4.802,7.289c-0.346,0.149-0.505,0.55-0.356,0.894c0.112,0.258,0.362,0.412,0.626,0.412c0.09,0,0.181-0.019,0.269-0.056c3.419-1.474,5.626-4.826,5.626-8.54C19.368,6.282,17.152,2.923,13.724,1.453z"></path>
+				</svg>
+			</span>
+		</label>
+	</div>
+	<section class="page-section masthead" id="main-content">
+		<div class="container">
+			<div class="row">
+				<div class="col" style="margin-top: 0.7rem; margin-bottom:0.7rem; display: flex; align-items: center; justify-content: center;">
+					<img id="wedding-main-img" class="img-fluid" src="assets/img/wedding/wedding-main-illustrator.png" alt="메인일러스트"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col mb-4" >
+					<p class="lead text-center mb-1">2024. 8. 24 토 PM 12:00</p>
+					<p class="lead text-center mb-1">디노체컨벤션웨딩홀 6F 아트홀</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page-section information animatable" id="invitation">
+		<div class="container">
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+			<div class="row">
+				<div class="col mb-4">
+					<div class="introduction-typing-content">
+						<ul>
+							<li>저희 두 사람,<br/><br/></li>
+							<li>사랑과 믿음으로 하나의 팀이 되어<br/><br/></li>
+							<li>인생이라는 멋진 프로그램을 함께 개발하려 합니다.<br/></li>
+						</ul>
+						<ul>
+							<li>2024년 8월 24일, 특별한 날<br/></li>
+							<li>새 출발의 첫걸음을 함께해 주시길 바랍니다.</li>
+						</ul>
+					</div>
+					<div class="font-weight-light typing" id="introduction-typing" style="font-size: 1rem;">
+						<ul style="padding-left: 0px; text-align:center;">
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<ul style="padding-left: 0px; text-align:center;">
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<p class="lead text-center mb-0"><span class="name">최상해</span> · <span class="name">김민숙</span>의 <span style="font-size:15px;">아들</span> <span class="name">최상원</span></p>
+					<p class="lead text-center mb-0"><span class="name">최성학</span> · <span class="name">이명임</span>의 <span style="font-size:15px;">&nbsp;딸&nbsp;</span> <span class="name">최인주</span></p>
+				</div>
+			</div>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+		</div>
+	</section>
+	<section class="page-section information animatable" id="calendar">
+		<div style="container">
+			<div class="calendar">
+				<div class="calendar_title">
+					<h4>2024. 8</h4>
+				</div>
+				<div class="calendar_date">
+					<div class="calendar_day">일</div>
+					<div class="calendar_day">월</div>
+					<div class="calendar_day">화</div>
+					<div class="calendar_day">수</div>
+					<div class="calendar_day">목</div>
+					<div class="calendar_day">금</div>
+					<div class="calendar_day">토</div>
+					<div class="calendar_number"></div>
+					<div class="calendar_number"></div>
+					<div class="calendar_number"></div>
+					<div class="calendar_number"></div>
+					<div class="calendar_number">1</div>
+					<div class="calendar_number">2</div>
+					<div class="calendar_number">3</div>
+					<div class="calendar_number">4</div>
+					<div class="calendar_number">5</div>
+					<div class="calendar_number">6</div>
+					<div class="calendar_number">7</div>
+					<div class="calendar_number">8</div>
+					<div class="calendar_number">9</div>
+					<div class="calendar_number">10</div>
+					<div class="calendar_number">11</div>
+					<div class="calendar_number">12</div>
+					<div class="calendar_number">13</div>
+					<div class="calendar_number">14</div>
+					<div class="calendar_number">15</div>
+					<div class="calendar_number">16</div>
+					<div class="calendar_number">17</div>
+					<div class="calendar_number">18</div>
+					<div class="calendar_number">19</div>
+					<div class="calendar_number">20</div>
+					<div class="calendar_number">21</div>
+					<div class="calendar_number">22</div>
+					<div class="calendar_number">23</div>
+					<div class="calendar_number current"><span class="day">24</span></div>
+					<div class="calendar_number">25</div>
+					<div class="calendar_number">26</div>
+					<div class="calendar_number">27</div>
+					<div class="calendar_number">28</div>
+					<div class="calendar_number">29</div>
+					<div class="calendar_number">30</div>
+					<div class="calendar_number">31</div>
+				</div>
+			</div>
+			<div class="text-center ddayText"></div>
+		</div>
+	</section>
+	<section class="page-section gallery animatable" id="gallery">
+		<div class="container">
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">갤러리</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+			<div id="gallery_slider" class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid1" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding//wedding-grid.png" alt="wedding-grid2" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid3" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid4" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid5" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid6" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid7" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid8" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid9" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid10" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid11" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid12" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid13" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid14" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid15" />
+						</li>
+						<li class="splide__slide" style="text-align: center;">
+							<img src="assets/img/wedding/wedding-grid.png" alt="wedding-grid16" />
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="page-section location animatable" id="location">
+		<div class="container">
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">오시는 길</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+			<div style="margin: auto; padding: 15px;">
+				<p class="place-address text-center">디노체컨벤션웨딩홀 6F 아트홀</p>
+				<p class="place-address text-center">서울 성동구 왕십리광장로 17 민자역사 6F<br/>(성동구 행당동 168-151 6F)</p>
+				<p class="place-address text-center">Tel. 02-2200-1166</p>
+				<div id="map"></div>
+			</div>
+			<div class="justify-content-center" style="text-align: center; background-color: rgba(0, 0, 0, .05);">
+				<button type="button" onclick="callNavi('naver','디노체컨벤션웨딩홀','37.5614086','127.0384812');" class="btn_navi" style="background: url('./assets/img/naver-map.png') no-repeat;"/>
+				<button type="button" onclick="callNavi('kakao','디노체컨벤션웨딩홀','37.5614086','127.0384812');" class="btn_navi"  style="background: url('./assets/img/kakao-map.png') no-repeat;"/>
+				<button type="button" onclick="callNavi('tmap','디노체컨벤션웨딩홀','37.5614086','127.0384812');" class="btn_navi"  style="background: url('./assets/img/t-map.png') no-repeat;"/>
+			</div>
+			<details>
+				<summary>대중교통 및 주차</summary>
+				<div class="justify-content-center" style="margin-bottom: 35px;">
+					<dl class="traffic-group-dl">
+						<dt class="traffic-group">
+							<strong>버스</strong>
+						</dt>
+					</dl>
+					<dl class="traffic-sub-dl">
+						<dt class="lead traffic-main">
+							<strong>비트플렉스(왕십리민자역사)</strong>
+						</dt>
+						<dd class="traffic-sub">
+							성동02, 성동03-1, 성동03-2, 성동08, 성동14</span>
+						</dd>
+					</dl>
+					<dl class="traffic-sub-dl">
+						<dt class="lead traffic-main">
+							<strong>왕십리광장</strong>
+						</dt>
+						<dd class="traffic-sub">
+							6010 (인천공항)
+						</dd>
+					</dl>
+					<dl class="traffic-sub-dl">
+						<dt class="lead traffic-main">
+							<strong>2번 출구(성동보건소, 소방서)<br/>
+								3번 출구(성동구청, 성동경찰서)</strong>
+						</dt>
+						<dd class="traffic-sub">
+							<div>110A, 141, 145, 148, 421, 2015, 2222</div>
+						</dd>
+					</dl>
+					<dl class="traffic-sub-dl">
+						<dt class="lead traffic-main">
+							<strong>4번 출구(성동경찰서)<br/>
+								7번 출구(마을버스 정류장, 삼부아파트)</strong>
+						</dt>
+						<dd class="traffic-sub">
+							4211
+						</dd>
+					</dl>
+					<dl class="traffic-sub-dl">
+						<dt class="lead traffic-main">
+							<strong>8번 출구(행당1파출소, 행당지구대)<br/>
+								9번 출구(행당1동사무소, 무학여중, 무학여고)</strong>
+						</dt>
+						<dd class="traffic-sub">
+							<div>110A, 110B, 141, 148, 241, 302, 421, 463, <br/>2012, 2013, 2014, 2016, 2222, 4211</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="justify-content-center" style="margin-bottom: 35px;">
+					<dl class="traffic-group-dl">
+						<dt class="traffic-group">
+							<strong>지하철</strong>
+						</dt>
+					</dl>
+					<dl class="traffic-dl">
+						<dt class="lead traffic-main">
+							[2호선, 5호선]
+						</dt>
+						<dd class="traffic-sub">
+							왕십리역 6-1번 출구로 나오셔서<br/>횡단보도 건너 롯데리아 옆 엘리베이터 이용
+						</dd>
+					</dl>
+					<dl class="traffic-dl">
+						<dt class="lead traffic-main">
+							[분당선, 중앙선]
+						</dt>
+						<dd class="traffic-sub">
+							왕십리역 12번 출구 개찰구로 나오셔서<br/>좌측 안쪽 엘리베이터 이용
+						</dd>
+					</dl>
+				</div>
+				<div class="justify-content-center" style="margin-bottom: 35px;">
+					<dl class="traffic-group-dl">
+						<dt class="traffic-group">
+							<strong>KTX / SRT</strong>
+						</dt>
+					</dl>
+					<dl class="traffic-dl">
+						<dt class="lead traffic-main">
+							[KTX]
+						</dt>
+						<dd class="traffic-sub">
+							(KTX) 용산역에서 하차 후, 1번 출구까지 이동하셔서<br/>
+							(경의중앙선) 용산역(이촌역 방면)에서 승차 후<br/>
+							왕십리역에서 하차하여 12번 출구 개찰구로 나오셔서<br/>
+							좌측 안쪽 엘리베이터 이용
+						</dd>
+					</dl>
+					<dl class="traffic-dl">
+						<dt class="lead traffic-main">
+							[SRT]
+						</dt>
+						<dd class="traffic-sub">
+							(SRT) 수서역에서 하차 후, 5-1번 출구까지 이동하셔서<br/>
+							(수인분당선) 수서역(대모산입구 방면)에서 승차 후<br/>
+							왕십리역에서 하차하여 12번 출구 개찰구로 나오셔서<br/>
+							좌측 안쪽 엘리베이터 이용
+						</dd>
+					</dl>
+				</div>
+				<div class="justify-content-center" style="margin-bottom: 35px;">
+					<dl class="traffic-group-dl">
+						<dt class="traffic-group">
+							<strong>주차</strong>
+						</dt>
+					</dl>
+					<dl class="traffic-dl">
+						<dd class="traffic-sub">
+							건물 내 2시간 무료주차<br/>
+							(* 주차는 5~6F으로 해주시는 것이 웨딩홀로의 이동에 용이)
+						</dd>
+					</dl>
+				</div>
+			</details>
+		</div>
+	</section>
+	<section class="page-section animatable" id="contact">
+		<div class="container">
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">마음전하실 곳</h2>
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+			</div>
+			<div style="margin: auto">
+				<p class="account-notice text-center">부득이하게 참석이 어려운 분들을 위해<br/>계좌번호를 기재하였습니다.</br/>너그러운 마음으로 양해부탁드립니다.</p>
+			</div>
+			<details>
+				<summary>신랑측</summary>
+				<div class="text-start account-group">혼주</div>
+				<div class="text-start account-list">
+					<div class="text-start account" style="display:flex; margin-bottom:10px;">
+						<div style="flex:0.4;">최상해</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXXXX">XXXXXX-XX-XXXXXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1" onclick="contact('groomFather', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1" onclick="contact('groomFather', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+					<div class="text-start account" style="display:flex;">
+						<div style="flex:0.4;">김민숙</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXXX">XXXX-XX-XXXXXXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1" onclick="contact('groomMother', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1" onclick="contact('groomMother', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+				</div>
+				<div class="text-start account-group">신랑</div>
+				<div class="text-start account-list">
+					<div class="text-start account" style="display:flex;">
+						<div style="flex:0.4;">최상원</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXX">XXX-XXX-XXXXXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1" onclick="contact('groom', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1" onclick="contact('groom', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+				</div>
+			</details>
+			<details>
+				<summary>신부측</summary>
+				<div class="text-start account-group">혼주</div>
+				<div class="text-start account-list">
+					<div class="text-start account" style="display:flex; margin-bottom:10px;">
+						<div style="flex:0.4;">최성학</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXX">XXX-XX-XXXX-XXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1" onclick="contact('brideFather', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1" onclick="contact('brideFather', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+					<div class="text-start account" style="display:flex;">
+						<div style="flex:0.4;">이명임</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXXXX">XXX-XXXXXX-XX-XXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1" onclick="contact('brideMother', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1" onclick="contact('brideMother', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+				</div>
+				<div class="text-start account-group">신부</div>
+				<div class="text-start account-list">
+					<div class="text-start account" style="display:flex;">
+						<div style="flex:0.4;">최인주</div>
+						<div style="flex:1.7; display:flex;">
+							<div style="flex:1;">은행</div>
+							<div style="flex:2;"><a href="#!" class="copy_account" data-account="XXXXXXXXXXXXXX">XXXXXX-XX-XXXXXX</a></div>
+						</div>
+						<div style="flex:0.8; display:flex;">
+							<span style="flex: 1"onclick="contact('bride', 'tel');"><img class="img-fluid" src="assets/img/smartphone-call.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+							<span style="flex: 1"onclick="contact('bride', 'sms');"><img class="img-fluid" src="assets/img/sms.png" style="margin-left:10px; width:23px; height:28px;"/></span>
+						</div>
+					</div>
+				</div>
+			</details>
+		</div>
+	</section>
+	<footer class="footer text-center">
+		<div class="container">
+			<a class="btn btn-outline-light btn-delivery-link mx-1 btn_kakao" href="#!" style="background-color: #f8f9fa; "><img style="width:15px; height:15px;" src="assets/img/kakao-talk.png" alt="kakao" /></a>
+			<a class="btn btn-outline-light btn-delivery-link mx-1 btn_link" href="#!" style="background-color: #f8f9fa;"><img style="width:18px; height:18px;" src="assets/img/link.png" alt="link" /></a>
+		</div>
+	</footer>
+	<div class="copyright py-4 text-center text-white">
+		<div class="container"><small><font color="black">Copyright &copy; SangWon&InJoo</font></small></div>
+	</div>
+	<div class="gallery-modal modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModal" aria-hidden="true">
+		<div class="modal-dialog modal-xl" role="document">
+			<div class="modal-content">
+				<div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+				<div class="modal-body text-center pb-5">
+					<div class="container">
+						<div class="row justify-content-center">
+							<div class="col-lg-8">
+								<img class="img-fluid rounded" id="wedding-image" src="" alt="wedding-image" />
+								<button class="w3-button w3-black w3-display-left noselection gallery_prev" onclick="slideImage(-1);">&#10094;</button>
+								<button class="w3-button w3-black w3-display-right noselection gallery_next" onclick="slideImage(+1);">&#10095;</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/event-block.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="js/wedding-card-template.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=2fd6ac6ad06cf611c034cce8e1a5d207&libraries=services"></script>
+	<script type="text/javascript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+	<script type="text/javascript" src="js/kakao-map.js"></script>
+	<script type="text/javascript" src="js/splide.min.js"></script>
+	<script type="text/javascript" src="js/sakura.js"></script>
+	<script type="text/javascript" src="js/wedding-card.js"></script>
+	</body>
+</html>
